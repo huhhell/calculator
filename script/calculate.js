@@ -38,7 +38,7 @@ deleteButton.addEventListener('click', deleteSign);
 function deleteSign() {
     let array = expField.innerHTML.split('');
     let popped = array.pop();
-    if (popped === ' ')  {
+    if (popped === ' ') {
         array.pop();
         array.pop();
     }
@@ -56,14 +56,22 @@ function countResult() {
     firstNumber = exp[0];
     secondNumber = exp[2];
     sign = exp[1];
-    if(!isCorrect()) return;
+    if (!isCorrect()) return;
 
     let result;
     switch (sign) {
-        case '+': result = +firstNumber + +secondNumber; break;
-        case '-': result = +firstNumber - +secondNumber; break;
-        case '*': result = +firstNumber * +secondNumber; break;
-        case '/': result = +firstNumber / +secondNumber; break;
+        case '+':
+            result = +firstNumber + +secondNumber;
+            break;
+        case '-':
+            result = +firstNumber - +secondNumber;
+            break;
+        case '*':
+            result = +firstNumber * +secondNumber;
+            break;
+        case '/':
+            result = +firstNumber / +secondNumber;
+            break;
     }
     resultField.innerHTML = Math.round10(result, -3);
 }
